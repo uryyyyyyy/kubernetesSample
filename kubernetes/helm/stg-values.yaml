@@ -2,11 +2,11 @@ Env: stg
 
 Apps:
   Main:
-    Image: gcr.io/teak-trainer-806/spring-app-boot:2d3c9c2
+    Image: gcr.io/teak-trainer-806/spring-app-boot:01c45e6
     Env:
       DefaultDBUrl: "127.0.0.1"
   CloudSql:
-    Image: gcr.io/teak-trainer-806/cloud-sql:0.1
+    Image: gcr.io/teak-trainer-806/cloud-sql:0.2
     Env:
       CloudSqlInstance: "teak-trainer-806:asia-northeast1:app-db"
 
