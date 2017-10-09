@@ -11,15 +11,15 @@ spec:
     spec:
       containers:
       - name: sample
-        image: {{ .Values.MyName }}/{{ .Values.AppName.Main }}:8ac9a55
+        image: {{ .Values.Apps.Main.Image }}
         env:
         - name: DEFAULT_DB_URL
-          value: "192.168.99.2"
+          value: {{ .Values.Apps.Main.Env.DefaultDBUrl }}
         ports:
         - containerPort: 8080
       {{ if eq .Values.Env "stg" }}
       - name: cloud-sql
-        image: {{ .Values.MyName }}/{{ .Values.AppName.CloudSql }}:0.1
+        image: {{ .Values.Apps.CloudSql.Image }}
         ports:
         - containerPort: 3306
       {{ end }}

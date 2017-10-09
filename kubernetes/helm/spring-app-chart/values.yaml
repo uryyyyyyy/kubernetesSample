@@ -1,6 +1,0 @@
-MyName: uryyyyyyy
-AppName:
-  Main: spring-app-boot
-  CloudSql: cloud-sql
-
-Env: local
