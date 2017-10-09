@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sample-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+      - name: sample
+        image: uryyyyyyy/spring-app-boot:f83ce99
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DEFAULT_DB_URL
+          value: "192.168.99.1"
+        ports:
+        - containerPort: 8080
