@@ -32,11 +32,22 @@ kubectl proxy
 # then open http://localhost:8001/api/
 ```
 
+## deployment
+
+```
+kubectl create -f ~~.yaml
+kubectl apply -f ~~.yaml
+kubectl rollout history deployment ~~~
+kubectl rollout history deployment ~~~ --revision=2
+kubectl rollout undo deployment ~~~ --to-revision=1
+```
+
 ## command
 
 ```
 kubectl create -f ~~.yaml
 kubectl delete ~~~ ~~~
+kubectl apply -f ~~.yaml
 ```
 
 ## show status
