@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: sample-deployment
+  name: {{ .Release.Name }}-deployment
 spec:
   replicas: 1
   template:
@@ -11,10 +11,9 @@ spec:
     spec:
       containers:
       - name: sample
-        image: uryyyyyyy/spring-app-boot:8ac9a55
-        imagePullPolicy: IfNotPresent
+        image: {{ .Values.MyName }}/{{ .Values.AppName }}:8ac9a55
         env:
         - name: DEFAULT_DB_URL
-          value: "192.168.99.1"
+          value: "192.168.99.2"
         ports:
         - containerPort: 8080
