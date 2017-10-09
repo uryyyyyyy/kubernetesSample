@@ -7,3 +7,6 @@ Apps:
       DefaultDBUrl: "127.0.0.1"
   CloudSql:
     Image: gcr.io/teak-trainer-806/cloud-sql:0.1
+
+Ingress:
+  StaticIpName: "test-ip"
