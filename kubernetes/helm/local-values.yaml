@@ -5,5 +5,3 @@ Apps:
     Image: uryyyyyyy/spring-app-boot:8ac9a55
     Env:
       DefaultDBUrl: "192.168.99.2"
-  CloudSql:
-    Image: uryyyyyyy/cloud-sql:0.1

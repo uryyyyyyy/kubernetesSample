@@ -20,6 +20,9 @@ spec:
       {{ if eq .Values.Env "stg" }}
       - name: cloud-sql
         image: {{ .Values.Apps.CloudSql.Image }}
+        env:
+        - name: CLOUD_SQL_INSTANCE
+          value: {{ .Values.Apps.CloudSql.Env.CloudSqlInstance }}
         ports:
         - containerPort: 3306
       {{ end }}
