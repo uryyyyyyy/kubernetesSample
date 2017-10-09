@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sample-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+      - name: sample
+        image: gcr.io/teak-trainer-806/spring-boot:f83ce99
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: DEFAULT_DB_URL
+          value: "127.0.0.1"
+        ports:
+        - containerPort: 8080
+      - name: cloud-sql
+        image: gcr.io/teak-trainer-806/cloud-sql:0.1
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: CLOUD_SQL_INSTANCE
+          value: "teak-trainer-806:asia-northeast1:aaa"
+        ports:
+        - containerPort: 3306
