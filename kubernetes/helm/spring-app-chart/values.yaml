@@ -1,2 +1,6 @@
 MyName: uryyyyyyy
-AppName: spring-app-boot
+AppName:
+  Main: spring-app-boot
+  CloudSql: cloud-sql
+
+Env: local
