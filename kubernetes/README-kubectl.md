@@ -61,3 +61,9 @@ kubectl get pods
 ```
 kubectl port-forward sample-deployment-217828376-b45vs 8080:8080
 ```
+
+## pod ssh
+
+```
+kubectl exec -it <Pod名> /bin/bash
+```

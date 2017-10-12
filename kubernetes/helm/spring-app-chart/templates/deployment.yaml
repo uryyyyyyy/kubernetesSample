@@ -17,6 +17,10 @@ spec:
           value: {{ .Values.Apps.Main.Env.DefaultDBUrl }}
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/config
+          readOnly: true
       {{ if eq .Values.Env "stg" }}
       - name: cloud-sql
         image: {{ .Values.Apps.CloudSql.Image }}
@@ -26,3 +30,7 @@ spec:
         ports:
         - containerPort: 3306
       {{ end }}
+      volumes:
+      - name: config
+        secret:
+          secretName: {{ .Release.Name }}-secret
